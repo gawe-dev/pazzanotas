@@ -1,0 +1,13 @@
+body{
+  background: url(./mosaico.png);
+  background-repeat: repeat;
+  font-family: sans-serif;
+}
+
+.user-select-none{
+  user-select: none;
+}
+
+.resize-none{
+  resize: none;
+}
