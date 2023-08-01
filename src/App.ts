@@ -63,16 +63,8 @@ export class Keypad {
   noteActive?: Note
   constructor(app: App) {
     this.app = app
-    this.notes = [...JSON.parse(localStorage.getItem('lsNotes')||'[]')].map((a:any)=>{
-      const newNote = new Note()
-      newNote.setNote(a)
-      return newNote
-    })
-    this.images = [...JSON.parse(localStorage.getItem('lsImages')||'[]')].map((a:any)=>{
-      const newImage = new Image()
-      newImage.setImage(a)
-      return newImage
-    })
+    this.notes = []
+    this.images = []
   }
 
   addNote(a?:any) {
@@ -124,8 +116,8 @@ export class Keypad {
     elemento.href = URL.createObjectURL(archivoJSON);
     elemento.download = "Proyecta Notas - " + new Date().toDateString() + " " + new Date().toTimeString()
     elemento.click()
-    localStorage.setItem('lsNotes', JSON.stringify(this.app.keypad.notes))
-    localStorage.setItem('lsImages', JSON.stringify(this.app.keypad.images))
+    // localStorage.setItem('lsNotes', JSON.stringify(this.app.keypad.notes))
+    // localStorage.setItem('lsImages', JSON.stringify(this.app.keypad.images))
   }
 
   importar() {
