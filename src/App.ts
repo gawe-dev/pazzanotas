@@ -92,7 +92,6 @@ export class Keypad {
   }
 
   fixZindex(){
-    debugger
     let papers: any
     papers = [...this.images]
     papers.push(...this.notes)
@@ -230,7 +229,7 @@ export class User {
     this.pageY = 0
     this.moveX = 0
     this.moveY = 0
-    this.lastColorNote = 'hsl(60 20% 30%)'
+    this.lastColorNote = 'hsl(60 100% 20%)'
     this.lastTextAlignament = 0
     this.lastTextWeight = 400
     this.lastTextSize = 30
@@ -354,7 +353,7 @@ export class Note {
     this.resizing = false
     this.id = new Date().toISOString()
     this.text = ''
-    this.bgcolor = 'hsl(60 20% 30%)'
+    this.bgcolor = 'hsl(60 100% 20%)'
   }
   setNote(a?: any) {
     this.width = a.width? a.width : this.width
@@ -374,33 +373,33 @@ export class Note {
     stack.splice(stack.findIndex(i => i.id == this.id), 1)
   }
   changeColor(user: any) {
-    if (this.bgcolor == 'hsl(60 20% 30%)') {
-      this.bgcolor = 'hsl(120 20% 30%)'
+    if (this.bgcolor == 'hsl(60 100% 20%)') {
+      this.bgcolor = 'hsl(120 100% 20%)'
       user.lastColorNote = this.bgcolor
       return
     }
-    if (this.bgcolor == 'hsl(120 20% 30%)') {
-      this.bgcolor = 'hsl(180 20% 30%)'
+    if (this.bgcolor == 'hsl(120 100% 20%)') {
+      this.bgcolor = 'hsl(180 100% 20%)'
       user.lastColorNote = this.bgcolor
       return
     }
-    if (this.bgcolor == 'hsl(180 20% 30%)') {
-      this.bgcolor = 'hsl(240 20% 30%)'
+    if (this.bgcolor == 'hsl(180 100% 20%)') {
+      this.bgcolor = 'hsl(240 100% 20%)'
       user.lastColorNote = this.bgcolor
       return
     }
-    if (this.bgcolor == 'hsl(240 20% 30%)') {
-      this.bgcolor = 'hsl(300 20% 30%)'
+    if (this.bgcolor == 'hsl(240 100% 20%)') {
+      this.bgcolor = 'hsl(300 100% 20%)'
       user.lastColorNote = this.bgcolor
       return
     }
-    if (this.bgcolor == 'hsl(300 20% 30%)') {
-      this.bgcolor = 'hsl(0 20% 30%)'
+    if (this.bgcolor == 'hsl(300 100% 20%)') {
+      this.bgcolor = 'hsl(0 100% 20%)'
       user.lastColorNote = this.bgcolor
       return
     }
-    if (this.bgcolor == 'hsl(0 20% 30%)') {
-      this.bgcolor = 'hsl(60 20% 30%)'
+    if (this.bgcolor == 'hsl(0 100% 20%)') {
+      this.bgcolor = 'hsl(60 100% 20%)'
       user.lastColorNote = this.bgcolor
       return
     }

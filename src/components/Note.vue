@@ -6,16 +6,15 @@ const { context } = defineProps<{ context: App }>()
 
 <template>
   <section class="position-absolute d-flex flex-column" v-for="note in context.keypad.notes"
-
     :style="{
       'left': note.left + 'px',
       'top': note.top + 'px',
       'z-index': note.zIndex,
-      'box-shadow': '0 0 2rem '+note.bgcolor,
-      backgroundColor: note.bgcolor,
+      'box-shadow': '0 0 .75rem ' + note.bgcolor,
+      'background-color': note.bgcolor,
     }"
     @auxclick="note.pinned = !note.pinned"
-    @mousedown="context.keypad.noteActive = note; 
+    @mousedown="context.keypad.noteActive = note;
       context.keypad.fixZindex()"
   >
     <div class="d-flex justify-content-between bg-dark bg-opacity-50" v-if="!note.pinned">
@@ -23,7 +22,7 @@ const { context } = defineProps<{ context: App }>()
       <span class="btn fs-5 p-0" @click="note.changeColor(context.user)">🎨</span>
       <span class="btn fs-5 p-0" @click="note.delete(context.keypad.notes)">❌</span>
     </div>
-    <textarea class="resize-none border-0 bg-white bg-opacity-25 text-light"
+    <textarea class="resize-none border-0 bg-light bg-opacity-25 text-white"
       :style="{
         fontWeight: note.textWeight,
         fontSize: note.textSize + 'px',
@@ -37,7 +36,6 @@ const { context } = defineProps<{ context: App }>()
         note.textAlignament == 2 ? 'text-end':
         ''
       "
-      
       v-model="note.text"></textarea>
     <div v-if="!note.pinned" class="d-flex justify-content-between align-items-end bg-dark bg-opacity-50">
       <span class="btn fs-5 text-light p-0 ps-1"
