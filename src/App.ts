@@ -113,7 +113,7 @@ export class Keypad {
     var elemento = document.createElement('a');
     var archivoJSON = new Blob([textoJSON], { type: 'application/json' });
     elemento.href = URL.createObjectURL(archivoJSON);
-    elemento.download = "Proyecta Notas - " + new Date().toDateString() + " " + new Date().toTimeString()
+    elemento.download = "Proyecta Notas - " + new Date().toDateString() + " " + new Date().toTimeString() + ".json"
     elemento.click()
     // localStorage.setItem('lsNotes', JSON.stringify(this.app.keypad.notes))
     // localStorage.setItem('lsImages', JSON.stringify(this.app.keypad.images))
